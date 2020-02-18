@@ -1,0 +1,48 @@
+[
+  {
+    "lang_order": ["en", "jp", "de", "mn"],
+    "name": {
+      "en": "adsf",
+      "jp": "asdf",
+      "de": "asdf",
+      "mn": ""
+    },
+    "chapter": {
+      "1": {
+        "name": {
+          "en": "tmp",
+          "jp": "Kapitel1_4_146.png",
+          "de": "05.jpg",
+          "mn": "05.jpg"
+        },
+        "pages": {
+          "1": {
+            "en": "",
+            "de": "data/Kapitel1_4_146.png",
+            "jp": "",
+            "mn": "data/05.jpg"
+          },
+          "2": {
+            "en": "",
+            "de": "data/Kapitel1_5_141.png",
+            "jp": "",
+            "mn": "data/06.jpg"
+          },
+          "3": {
+            "en": "",
+            "de": "data/Kapitel1_5_141.png",
+            "jp": "",
+            "mn": "https://storage.googleapis.com/shurikenteam/Drstone/chapter_001/07.jpg"
+          },
+          "4": {
+            "en": "",
+            "de": "data/Kapitel1_5_141.png",
+            "jp": "",
+            "mn": "https://storage.googleapis.com/shurikenteam/Drstone/chapter_001/08.jpg"
+          }
+        }
+      }
+    }
+  }
+]
+

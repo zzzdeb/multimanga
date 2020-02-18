@@ -1,0 +1,65 @@
+body {
+  background: #000;
+}
+.class1 {
+  position: absolute; right: 0; background: #dedede; padding: 5px;
+  cursor: pointer;
+}
+
+.img-wrap {
+  margin-top: 5px;
+  height: 95%;
+  text-align: center;
+}
+.img {
+  
+}
+#navbar {
+  padding: 3px 0;
+  background: #dedede;
+  position: relative;
+}
+#navbar .menu {
+  position: absolute;
+  left: 5px;
+  top: middle;
+  padding-top: 2px;
+}
+#navbar .menu a {
+  padding: 2px 3px;
+}
+#navbar .menu a:hover {
+  background-color: #eee;
+  color: #444;
+  text-decoration: none;
+}
+
+select {
+  margin: 0;
+  padding: 0;
+  margin-bottom: 2px;
+}
+input {
+  padding: 0;
+  margin: 0;
+}
+
+.img-wrap {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  top: 0;
+  left: 0;
+}
+.img_lang1 {
+  /* position: relative; */
+  width: 1000px;
+  top: 0;
+  left: 0;
+}
+.img_lang2 {
+  position: absolute;
+  width: 1000px;
+  top: 0;
+  left: 0;
+}
