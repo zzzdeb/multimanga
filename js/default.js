@@ -1,8 +1,8 @@
 $(document).ready(function() {
-  var url = 'http://reader.shurikenteam.com/m/DrStone/';
-  var chapter_num = '131';
-  var next_url = 'm/DrStone/131/02';
-  var prev_url = 'm/DrStone/131';
+  // var url = 'http://reader.shurikenteam.com/m/DrStone/';
+  // var chapter_num = '131';
+  // var next_url = 'm/DrStone/131/02';
+  // var prev_url = 'm/DrStone/131';
 
   $('select#page_select').change(function() {
     url += chapter_num + '/' + $(this).attr('value');
@@ -29,14 +29,6 @@ $(document).ready(function() {
       $(location).attr('href', prev_url);
     }
 });
-
-  img_fix();
-  });
-
-function toggle_img_fix() {
-  if ($.cookie('img_fix') == 1) $.cookie('img_fix', null); else $.cookie('img_fix', 1);
-  img_fix();
-}
 
 function img_fix() {
   if ($.cookie('img_fix') == 1) {

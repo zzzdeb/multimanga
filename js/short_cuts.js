@@ -5,20 +5,42 @@
  * License : BSD
  */
 
-var currentChapter = 1
-var currentPage = 1
 
 var Application = function(){
-  this.lang1 = "mn"
-  this.lang2 = "de"
+  this.lang1 = "ja"
+  this.lang2 = "en"
+  this.currentChapter = 1
+  this.currentPage = 1
 }
 
-Application.showCurrent = function(){
-  jQuery.getJSON( "data/data.json", function( json ) {
-    document.querySelector('.img_lang1').src = json[0].chapter[String(currentChapter)].pages[String(currentPage)]["mn"];
-    document.querySelector('.img_lang2').src = json[0].chapter[String(currentChapter)].pages[String(currentPage)]["de"];
+
+Application.prototype.showCurrent = function(){
+  document.cookie = this.currentPage
+  var this_orig = this;
+  jQuery.getJSON( "data/onepiece/con.json", function( json ) {
+    document.querySelector('.currentPage').innerHTML = this_orig.currentPage
+    document.querySelector('.img_lang1').src = "data/onepiece/" + this_orig.lang1 + "/" + json[this_orig.lang1][String(this_orig.currentPage)];
+    document.querySelector('.img_lang2').src = "data/onepiece/" + this_orig.lang2 + "/" + json[this_orig.lang2][String(this_orig.currentPage)];
    });
   // document.querySelector('.img_lang2').style.display = "initial";
+}
+
+Application.prototype.nextPage = function(){
+  app.currentPage++
+  app.showCurrent();
+}
+
+Application.prototype.prevPage = function(){
+  app.currentPage--
+  app.showCurrent();
+}
+
+Application.prototype.toggleLang = function(){
+  if (document.querySelector('.img_lang2').style.zIndex == -1){
+    document.querySelector('.img_lang2').style.zIndex = 1;
+  } else {
+    document.querySelector('.img_lang2').style.zIndex = -1;
+  }
 }
 
 shortcut = {
@@ -253,19 +275,13 @@ shortcut = {
 
 
 shortcut.add("space", function () {
-  if (document.querySelector('.img_lang2').style.display == "none"){
-    document.querySelector('.img_lang2').style.display = "initial";
-  } else {
-    document.querySelector('.img_lang2').style.display = "none";
-  }
+  app.toggleLang()
 });
 
 shortcut.add("right", function () {
-  currentPage++
-  Application.showCurrent();
+  app.nextPage()
 });
 
 shortcut.add("left", function () {
-  currentPage--
-  Application.showCurrent();
+  app.prevPage()
 });
