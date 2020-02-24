@@ -5,17 +5,29 @@
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <title>ZZZ</title>
     <link rel="stylesheet" type="text/css" href="static/style.css" />
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
+    <script
+      type="text/javascript"
+      src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+    ></script>
     <!-- <script src="static/js/jquery.cookie.js"></script>  -->
   </head>
   <body>
-    <p class="currentPage" id="currentPage">1</p>
-    <div class="img-wrap">
-      <a><img class="img_lang1" id="img1" src="data/onepiece/ja/1/1" /></a>
-      <a><img class="img_lang2" id="img2" src="data/onepiece/en/1/1" /></a>
+    <div id="navbar" align="center">
+      <div id="lang-select-bar">
+      </div>
+
+      <strong>Page:</strong>
+      <select name="page" id="page_select">
+      </select>
+      <strong>Debug:</strong>
+      <a class="currentPage" id="currentPage">1</a>
+      <a id="status">status</a>
     </div>
-    <p id="status">status</p>
-    <script type="text/javascript" src="js/new.js"></script>
+    <div class="img-wrap" id=image-show-div>
+      <img class="img_lang" id="img1" src=""/>
+    </div>
+    <script type="text/javascript" src="js/app.js"></script>
     <script type="text/javascript" src="js/short_cuts.js"></script>
+    <script type="text/javascript" src="js/new.js"></script>
   </body>
 </html>

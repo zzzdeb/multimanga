@@ -8,23 +8,16 @@ body {
 
 .img-wrap {
   position: relative;
-  width: 1000px;
-  /* height: 200px; */
+  /* margin: auto; */
   top: 0;
   left: 0;
-}
-.img_lang1 {
-  /* position: relative; */
-  width: 1000px;
-  top: 0;
-  left: 0;
-  z-index: 0;
 }
 
-.img_lang2 {
+.img_lang {
   position: absolute;
   width: 1000px;
   top: 0;
-  left: 0;
-  z-index: -1;
+  left: 50%;
+  transform: translate(-50%, 0);
+  /* z-index: -1; */
 }
