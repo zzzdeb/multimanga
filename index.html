@@ -3,13 +3,32 @@
   <head>
     <!-- <base href="http://reader.shurikenteam.com/"> -->
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-    <title>ZZZ</title>
+    <title>Multimanga - zzz</title>
+
+    <link rel="apple-touch-icon" sizes="57x57" href="../icon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="../icon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="../icon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="../icon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="../icon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="../icon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="../icon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="../icon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="../icon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="../icon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="../icon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="../icon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="../icon/favicon-16x16.png">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+
     <link rel="stylesheet" type="text/css" href="static/style.css" />
     <script
       type="text/javascript"
-      src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
+      src="https://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"
     ></script>
-    <!-- <script src="static/js/jquery.cookie.js"></script>  -->
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@beta/dist/js.cookie.min.js"></script>
   </head>
   <body>
     <div id="navbar" align="center">
@@ -18,6 +37,14 @@
 
       <strong>Page:</strong>
       <select name="page" id="page_select">
+      </select>
+      <strong>Num of pages:</strong>
+      <select class="num-of-pages">
+        <option value="1">1</option>
+        <option value="3">3</option>
+        <option value="7">7</option>
+        <option value="15">15</option>
+        <option value="31">31</option>
       </select>
       <strong>Debug:</strong>
       <a class="currentPage" id="currentPage">1</a>

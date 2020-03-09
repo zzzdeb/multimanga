@@ -17,25 +17,7 @@ $(document).ready(function() {
   }), true);
 
   app = new Application();
-  app.currentPage = document.cookie;
+  app.loadMetaData();
 
-  app.page_selector.onchange = function(e){
-    app.changePageTo(app.page_selector.selectedIndex)
-  }
-  // app.page_selector.addEventListener('change', (event)=> {
-    // console.log(event)
-    // this.prototype.changePageTo(this.page_selector.selectedIndex)
-  // })
-
-  for (var i = 0; i < app.lang_selectors.length; i++) {
-    let j = i;
-    app.lang_selectors[j].onchange = function(e) {
-      app.setLang(j, this.value);
-    };
-  }
-
-  app.showCurrent();
-  app.changeView();
   // document.body.addEventListener('click', (function(){document.querySelector('#status').innerHTML = 'test'}), true);
-
 });
