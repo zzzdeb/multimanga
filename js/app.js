@@ -17,7 +17,7 @@ var Application = function() {
 
   this.page_selector = $("select#page_select")[0]
   this.lang_selectors = $(".lang_select")
-  this.lang = [null,null];
+  this.lang = ['ja','en_color'];
   if (Cookies.get('lang')) {
     this.lang = Cookies.get('lang').split(',')
   }
@@ -120,22 +120,22 @@ Application.prototype.showCurrent = function() {
   for (var imgi = 0; imgi < this.pagesToShow; imgi++){
     for (var i = 0, len = this.lang.length; i < len; i++) {
       let l = this.lang[i]
-      if (this.json[l][String(this.currentPage)]) {
+      if (this.json[l][this.currentPage]) {
         document.querySelector(".img_lang#img-"+imgi+'-'+i).src =
           this.dataroot+"/onepiece/" +
           this.lang[i] +
           "/" +
-          this.json[l][String(this.currentPage+imgi)];
+          this.json[l][this.currentPage+imgi];
       } else {
         document.querySelector(".img_lang#img-"+imgi+'-'+i).src = ''
       }
       for (var j = 0; j < 1; j++) {
-        if (this.json[l][String(this.currentPage+j+1)]) {
+        if (this.json[l][this.currentPage+j+1]) {
         preLoadList.push(
         this.dataroot+"/onepiece/" +
           this.lang[i] +
           "/" +
-          this.json[this.lang[i]][String(this.currentPage + j + 1)])
+          this.json[this.lang[i]][this.currentPage + j + 1])
         }
       }
     }
@@ -156,7 +156,7 @@ Application.prototype.setLang = function(num, lang) {
 };
 
 Application.prototype.changePage = function(delta) {
-  this.currentPage = parseInt(this.currentPage) + parseInt(delta);
+  this.currentPage = parseInt(this.page_selector.options[this.page_selector.selectedIndex + parseInt(delta)].value)
   this.showCurrent();
 };
 
@@ -242,7 +242,7 @@ Application.prototype.drawNavbar = function() {
     this.page_selector.innerHTML = options;
     selected = this.page_selector.querySelector("option[value='"+this.currentPage+"']")
     if (!selected) {
-      this.currentPage = this.page_selector.options[0].value
+      this.currentPage = parseInt(this.page_selector.options[0].value)
       selected = this.page_selector.querySelector("option[value='"+this.currentPage+"']")
     }
     selected.setAttribute('selected', 'selected')
